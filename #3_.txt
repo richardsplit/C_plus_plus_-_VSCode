@@ -1,0 +1,9 @@
+// using namespace std; for naming convention and preventing naming issues 
+//cout is a object (cookie) from class [ostream] (cookie cutter)
+//cin is an object (cookie ) from class [istream]
+//operators works 
+
+#include <iostream>
+
+using namespace std; //using directive 'std'-using standart namespace
+using std::cout ;//
