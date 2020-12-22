@@ -66,6 +66,9 @@ int main () //main function
 
 
 #### Creating a function 
+### void function does not return anything so we can just 
+
+
 
 /*
 #include<cmath>
@@ -109,3 +112,33 @@ int main () //main function
 
 
 */
+
+15 DATA TYPES
+INTEGRAL integer based larger int 
+CHAR -characters 
+STRINGS -SEQUENCES OF characters
+FLOATING POINT-fractional numbers /like double 
+BOOL-T/F [true or false]
+ARRAYS -multiple data of data type
+STRUCTS -allow us to create a custom type 
+CLASSES -allow us to create a custom type 
+VECTORS 
+UNIONS 
+
+
+### CLASS-IS LIKE A BLUEPRINT DESCRIBING A STRUCTURE 
+### OBJECT  -IS AN INSTANCE OF A CLASS
+
+//STATIC FOR C++ - 
+
+//int x is stuck all the time at compile time with int type of data for x
+
+
+16 INTEGRAL DATA TYPES
+
+MOST BASIC INTEGRAL DATA TYPE "INT"
+
+signed numbers -negative numbers
+
+
+17 Integral Data types Hands On
