@@ -65,7 +65,64 @@ int main () //main function
 */
 
 
+##### 
+
+
 #### Creating a function 
+
+#include <iostream>
+#include<cmath>
+using std::cout;
+using std::endl;
+using std::cin;//console in
+
+
+//double power (double , int) -- declation [must be at the start of our program ]
+
+/*double power (double base, int exponent ) // definition 
+    {
+    return 0.0;
+    }
+*/
+
+double power (double base, int exponent ) //declaring and defining  ## 'base' & 'exponent' -parameters ##  identifier 'power'
+    {
+     double result =1 ;
+
+        for(int i =0;i<exponent;i++)
+        {
+            result=result * base;
+        }
+        return result;
+    }
+
+
+    void print_pow(double base, int exponent)
+    {
+   
+    double mypower = power (base, exponent); // -'arguments '
+    cout <<base <<"  Raised to the " << exponent <<" power is  "<< mypower<<"\n";
+
+    }
+
+int main () //main function 
+
+
+{
+
+double base ;
+int exponent ;
+
+  cout <<"What is the base ?: ";
+    cin >> base; 
+    cout <<"What is the exponent?: ";
+    cin >> exponent;
+
+    print_pow(base,exponent);
+}
+
+
+
 ### void function does not return anything so we can just 
 
 
@@ -142,3 +199,78 @@ signed numbers -negative numbers
 
 
 17 Integral Data types Hands On
+
+short a ; //8 bits 
+int b; //at least 16 bits 
+long c ; //at least 32 bits 
+long long d; //at least 64 bits
+
+//short <=int <=long <=long long 
+
+
+// unsigned is for only positive extened numbers 
+unsigned short aa;
+unsigned int bb;
+unsigned long cc;
+unsigned long long dd;
+
+
+char 
+unsigned char 
+
+
+/*#include<climits>  +  command SHRT_MAX (positive ) USHRT_MAX(extended positive)
+ SHRT_MIN (negative)
+See the memory allocation */ 
+
+18 CHar 
+
+19 Escape SEQUENCES 
+
+"\t" -creates space 
+"\b" -delete a character
+"\n" -to the next line 
+"\0" -null terminating character indicating the end of c style string 
+(native to c and stil available in c++ ) [stops the sting not to cross point of memory]
+
+' \"[nachalo]  \" [krai]' -slaga kavichki 
+"\\" -backslash 
+
+### 20 BOOL / boolean 
+
+### 21 Types of floating type of numbers 
+float a ; - 7.7E4 - E4 -move 7  ,4 place to the left 
+double b;
+long double ; 
+
+
+how to check up until how many digits is trustworthy 
+you need "#include <float.h>" +command for float = FLT_DIG' for double = 'DBL_DIG'
+
+
+
+#### 22 CONSTANCE 
+
+ const -read only 
+ define X 10 - [macros] pri bibliotekite se definira 
+examp const int x =5; -posle ne moje da se promenq 
+
+enum {} -type of constant 
+
+### 23 - Numeric Functions
+
+#include <cmath>  + comand 'sqrt' -square root
+
+-nan -za otricatelni chisla  +sqrt 
+-inf  // infinity-za ogromni chisla +pow 
+negative infinity -inf 
+// command remainder 
+returns the remains from division like % --za chisla s double primerno3.15
+
+command fmax -comparing giving the largest 
+command fmin -comparing giving the smallest 
+
+command ceil -- rounds a number 
+command  floor -removes the decimal value ',' and rouns to lower negative value 
+command  trunc-with negative value maha desetichnata zapeteq
+command round - rounds a number 
