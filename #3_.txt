@@ -274,3 +274,73 @@ command ceil -- rounds a number
 command  floor -removes the decimal value ',' and rouns to lower negative value 
 command  trunc-with negative value maha desetichnata zapeteq
 command round - rounds a number 
+
+### 24 Strings 
+string class is superiour 
+c string -from c language 
+
+string concationation -combining strings together
+append to a string -to add to the original variable command '+='
+
+'length()' -vrushta kolko sa char-ovete v string .
+s '.' -moje da vikame funkciq ot class 
+
+methods -are just functions attached to an object 
+primer greetings.'length()' -- //method to object greetings from class 'string'
+functions -are alone  
+
+char richard[] = "Caleb" ; //c string ==array of characters  --taka definirani ima samo 6 char 
+
+#include<string>
+using std::cout;
+using std::endl;
+using std::cin;//console in
+
+
+int main ()
+{
+   
+   std::string greeting ="Hello ";
+   std::string greetings  = greeting + "there"; 
+    cout << greetings << std::endl;
+    cout << greetings.length() <<std::endl;
+
+    char richard[] = "Caleb" ; //c string ==array of characters  --taka definirani ima samo 6 char 
+    
+
+}
+
+
+### 25 String for user input 
+
+std::string greeting;
+   getline(std::cin ,greeting);
+   cout <<greeting <<endl;
+
+
+### 26 String methods 
+.size-get a lenght of a string
+.lenght -get a lenght of a string
+
+--Modifiers 
+'+=' --dobavq kum variable-a 
+
+'.append ()' --dobavq kum variable-a
+
+'.insert()' -insert a string primerno 
+            std::string greeting = "Hello";
+            greeting.insert (3,"  ") ; -sled 3tiq char hel shte ima stringa ili nashiq paket ->" "
+            cout <<greeting.size() <<endl; 
+
+'.erase()' - kato insert samo che trie 
+
+--za posledniq ako iskame da iztriem 
+std::string greeting = "Hello";
+greeting.erase (greeting.lenght() -1) ; -lenght ne chete ot 0 kato indexite toest na 
+'h -1 e-2 l-3 l-4 o-5' a programata go chete h-0 ,e-1 ,l-2 ,l-3,o-4
+cout <<greeting.size() <<endl;
+
+'.replace()' 
+ std::string greeting = "Hello";
+   greeting.replace (0 //size ,4 //lenght / the word to replace it ->"Heaven") ;
+   cout <<greeting <<endl;
