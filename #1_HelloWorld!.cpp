@@ -2,6 +2,7 @@
 #include<climits>
 #include<cmath>
 #include<string>
+#include<vector>
 #include<cstdlib>
 #include<ctime>
 
@@ -9,11 +10,11 @@ using std::cout;
 using std::endl;
 using std::cin;//console in
 
-void print_array (int array [],int count)
+void print_vector (std::vector<int> vector)
     {
-        for (int i=0;i<count;i++)
+        for (int i=0;i<vector.size();i++)
             {
-                std::cout<<"Your guesses so far : "<<array[i] <<"\t";
+                std::cout<<"Your guesses so far : "<<vector[i] <<"\t";
             }
             std::cout <<"\n";
     }
@@ -21,8 +22,8 @@ void play_game()
 {
 
 
-    int guesses[251];
-    int guess_count=0;
+    std::vector<int> guesses;
+    
 
     int random = rand() % 251;
     std::cout<<random <<std::endl;
@@ -32,7 +33,7 @@ void play_game()
         int guess;
         std::cin>>guess;
 
-        guesses[guess_count++] = guess;//guess_count v sluchaq ni e 'i' -pochva ot 0 koito go uvelichavame vseki put kogato vkarame -'guess'
+        guesses.push_back(guess); //guess_count v sluchaq ni e 'i' -pochva ot 0 koito go uvelichavame vseki put kogato vkarame -'guess'
         //moje i guess_count; tuk ,na tozi red 
         //Ako slojim '++guess_count -purvo shte  incrementira,toest nashiq 'i' koito e guess_count shte go incrementira,i shte assigne guess-a ni na sledvashtiq indeks ='i'/guess_count      
         if(guess==random)
@@ -49,7 +50,7 @@ void play_game()
         }
     }
 
-    print_array(guesses,guess_count);
+    print_vector(guesses);
 }
 
 

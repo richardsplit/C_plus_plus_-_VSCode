@@ -782,4 +782,191 @@ int main ()
 #######################
 
 49 ###### Using Array to Keep Track of Guessing for our Mini Game Guess
+########################
+#######################
 
+#include <iostream>
+#include<climits>
+#include<cmath>
+#include<string>
+#include<cstdlib>
+#include<ctime>
+
+using std::cout;
+using std::endl;
+using std::cin;//console in
+
+void print_array (int array [],int count)
+    {
+        for (int i=0;i<count;i++)
+            {
+                std::cout<<"Your guesses so far : "<<array[i] <<"\t";
+            }
+            std::cout <<"\n";
+    }
+void play_game()
+{
+
+
+    int guesses[251];
+    int guess_count=0;
+
+    int random = rand() % 251;
+    std::cout<<random <<std::endl;
+    std::cout<<"Guess the number : ";
+    while(true)
+    {
+        int guess;
+        std::cin>>guess;
+
+        guesses[guess_count++] = guess;//guess_count v sluchaq ni e 'i' -pochva ot 0 koito go uvelichavame vseki put kogato vkarame -'guess'
+        //moje i guess_count; tuk ,na tozi red 
+        //Ako slojim '++guess_count -purvo shte  incrementira,toest nashiq 'i' koito e guess_count shte go incrementira,i shte assigne guess-a ni na sledvashtiq indeks ='i'/guess_count      
+        if(guess==random)
+        {
+            std::cout <<"You win!\n";
+            break;
+        } 
+        else if ( guess < random )
+        {
+            std::cout<<"Your number is too low\n";
+        } else 
+        {
+            std::cout<<"Your number is too high\n";
+        }
+    }
+
+    print_array(guesses,guess_count);
+}
+
+
+
+
+int main ()
+{
+
+ srand(time(NULL));
+    int choice ;
+    do 
+    {
+    std::cout <<"0. Quit" << std::endl <<"1. Play Game\n";
+    std::cin >>choice;
+
+      switch(choice )
+      {
+            case 0:
+            std::cout << "Thanks for nothing\n";
+            return 0;
+            
+            case 1:
+            play_game();
+            break;
+
+            case 2:
+            std::cout<<"settings\n";
+            break;
+      }
+
+    }
+    while(choice!=0);
+    
+ 
+}
+########################
+#######################
+
+##### 50 Vectors 
+--Size is dynamic 
+// std::vector<int> items={12,13} ; -'<' and '>' -are part of standart template library (collection of classses that gives us functionality for development)
+// '<int>' -templatized data structure -we are passing what data type to data structure vector : ) 
+
+
+//special method for vector --> 'items.push_back(100)' //we are adding value '100' to the vector so std::vector<int> items={12,13,100} ;
+//whenever we add a new element into already defined vector ,behind the scenes memory is being adjusted to all new values 
+
+//How to get an element from a vector -- 'items[2] -pak raboti s indeksi so ... from items={12,13,100} -- items[2] e 100 
+
+//Vectors actually knows their size --> items.size() -samo che ne e sprqmo indeksite toest broi 1,2,3 and 0,1,2
+
+//items.size()
+
+//items[items.size()-1] --kak da vzemem posledniq element (zashtoto indeksa e ot 0 ...) //<data[data.size()-1]
+
+
+
+##### 51 Vectors -creating a vector 
+########################
+#######################
+#include <vector>
+using std::cout;
+using std::endl;
+
+using std::cin;//console in
+
+int main ()
+{
+
+std::vector<int> data ={1,2,3};
+data.push_back(12);
+std::cout<<data[data.size()-1]<<std::endl;
+data.pop_back();//methoda  shte mahne posledniq element  //drugi methodi na capacity v  https://www.geeksforgeeks.org/vector-in-cpp-stl/
+std::cout<<data.size()<<std::endl;
+
+}
+########################
+#######################
+
+
+##### 52 Passing a Vector into a function
+
+########################
+#######################
+#include <vector>
+using std::cout;
+using std::endl;
+
+using std::cin;//console in
+
+void print_vector(std::vector<int> & data)
+ //vajno e da se otbeleji che kato se vikne *(doly)..........+tuk //mojem da dobavim tuk '&data -koeto shte nasledi(izpolzva) data ot main ,
+ // [naricha se passing by refference ] ,spestqvame memory zashtoto ne e nujno array da se kopira nanovo samo za funkciqta
+{
+    data.push_back(12);
+    for(int i=0;i< data.size();i++)
+    {
+        std::cout<<data[i]<<"\t";
+    }
+    std::cout<<"\n";
+}
+
+int main ()
+{
+
+std::vector<int> data ={1,2,3}; 
+print_vector(data); //* kato se vikne tuk samo valuetata 1,2,3 v main se vikat zashtoto ne zavisim ot valuetata vuv funkciqta +(gore)
+print_vector(data); 
+print_vector(data); 
+print_vector(data); 
+
+}
+########################
+#######################
+
+
+### 53 -Refactoring the Guessing Game /with vectors instead of array
+C--_VSCode_Calleb_Curry -repository uploaded for the change
+
+### 54  STL ARRAYS-STANDART templatized ARRAYS --between array and vector *
+
+--  std::array<int,5> //templatized array syntax 
+//they are statically sized 
+//they remember their lenght
+///it works as array wrapped in an object
+
+// std::array <int ,5> ages  ={1,2,3};
+ 
+//We STL Arrays we can do : ages[0]-za purviq element ; ages.size()  --which size is a method since it is called by object ages which is a templatized array
+
+### 55 STL ARRAYS in PRACTISE
+
+std::array<int, 20> data = {1,2,3}; -'<int,20 (size-a)'>
