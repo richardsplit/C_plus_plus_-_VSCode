@@ -233,7 +233,7 @@ See the memory allocation */
 "\0" -null terminating character indicating the end of c style string 
 (native to c and stil available in c++ ) [stops the sting not to cross point of memory]
 
-' \"[nachalo]  \" [krai]' -slaga kavichki 
+' \" [nachalo]  \" [krai]' -slaga kavichki 
 "\\" -backslash 
 
 ### 20 BOOL / boolean 
@@ -286,7 +286,7 @@ append to a string -to add to the original variable command '+='
 s '.' -moje da vikame funkciq ot class 
 
 methods -are just functions attached to an object 
-primer greetings.'length()' -- //method to object greetings from class 'string'
+primer /greetings.'length()'/ -- //method to object greetings from class 'string'
 functions -are alone  
 
 char richard[] = "Caleb" ; //c string ==array of characters  --taka definirani ima samo 6 char 
@@ -344,3 +344,442 @@ cout <<greeting.size() <<endl;
  std::string greeting = "Hello";
    greeting.replace (0 //size ,4 //lenght / the word to replace it ->"Heaven") ;
    cout <<greeting <<endl;
+
+##### 27 STRING OPERATION METHODS    
+
+   std::string greeting = "What the hell";
+
+    greeting.find("hell"); -tursi opredeleni dum 
+greeting.replace(greeting.find("hell") ,4,"Much wow"); //tuk ,slagame tursachkata na mqstoto na indeksa koito iskame [za da si go nameri]
+
+   cout<<greeting <<endl;
+
+
+ method substr  
+.substr(5,2) - vadi ot string-a opr chast // '5' e indeksa // '2' kolko e dulga dumata/chasta
+
+method find_first_of - namera char kudeto i da e 
+
+   std::string greeting = "What the hell";
+    std::cout << greeting.find_first_of ("aeoua") <<std::endl; -shte vurne 2 ,zashtoto 'a' e na indeks '2'
+    --W-0 ,h-1 ,a-2<<---
+
+npos - not found -dava mn golqmo chislo -- ravno  e na unsigned long = -1 koeto ne stava,polzva se za testing 
+
+FOR COMPARING 
+'==' i ".compare"
+
+
+### 29 HECTAL AND decimal   
+
+### 30 Operators and associativity 
+'+'
+operands sa obektite varhu koito operarirat operatorite 
+
+// double x = 10./4 // 5+5 e expression /za da izvadim 10 ot 4 -- trqbva da e double i s '.' ;
+
+nqkoi operacii kakto v matematikata sa s prioritet * , / , i tn 
+ako imame operatori s ednakva sila toest 5 *5 *3 ,deistviqta pochvat ot lqvo na dqsno 
+inache sa ot dqsno na lqvo . Sus skobi force-vame da se prochete purvo 
+
+
+### 31 summary
+
+working with functions -1 declaration 2definition 3 calling 
+fucntion (parameter x,parameter ,y ) -posle ako q vikame 
+    {
+    kod 
+    kod kod
+    }
+Ako q viknem posle --> fucntion (5 ,3) -tova sa argumenti koito se storvat v parametrite x i y 
+
+###############################
+###############################
+###############################
+
+####  32 CONTROL FLOW 
+     ## Branching - if ()//if else ()//if () ,else if() [we can have multiple]  ,else  [only]
+    ### 
+
+########################
+#######################
+
+    int main ()
+{
+     std:: cout <<"How old are you ? ";
+   int age;
+   std:: cin>>age;
+   if (age >13)
+   {
+       std:: cout <<"You are not old enough\n";
+      
+   }
+        else if (age < 19)
+        {
+            std:: cout << "You are almost\n";
+        }
+            else 
+            {
+                std:: cout << "False\n";
+            }
+            
+    return 0;
+
+ 
+}   
+########################
+#######################
+
+    #####################
+    Logical Operator
+&& -AND
+|| -OR 
+!-revert truth NOT 
+
+########################
+#######################
+
+ std:: string name_answer = "Claire" ;
+    std:: string name_guess ;
+    std:: cout<<"Gues the name!: " ;
+    std:: cin >>name_guess;
+
+    int age_answer = 26; 
+    int age_guess;
+    std:: cout <<"Guess my age!? : " ;
+    std:: cin >> age_guess;
+
+########################
+#######################
+
+if (!(name_guess == name_answer) || age_guess == age_answer) -tuk vzima name guess-a dali e za imeto i go pravi da ne e vqrno 
+//toest ako napishem Claire shte e greshno,no vsqko drugo ime shte e vqrno smiley face
+
+if ((name_guess != name_answer) || age_guess == age_answer)
+
+    ####################
+     switch  statements //uses only integral type polezno e primerno za menu [izbirame ot 1 do 3 primerno ]
+        {
+            case1 : //code break ;
+            case 2 : // code break ;
+            case 2 : // code break ; 
+        }
+
+enum --actually stores possible values as integral types //used for a series of pottential options
+enum class --just a little bit better ,zashtoto ogranichavame primerno summer samo ako slojim 'Season::' purvo
+
+########################
+#######################
+
+  enum class Season {summer,spring,fall ,winter};
+   Season now =Season::winter;
+   
+   
+        switch(now)
+        {
+        case Season::summer:
+            break;
+        case Season::spring: 
+            break;
+        case Season::fall:
+            break;  
+        case Season::winter:
+        std:: cout << "Stay warm ! ";
+            break;  
+        default:  
+            break;
+        } 
+
+########################
+#######################
+
+
+############# Looping  - while ,for ,do -while statements 
+
+
+
+##### Loops 
+initilization
+Condition
+update
+
+while / do while loop /for loop 
+
+37 ### For Loops 
+
+########################
+#######################
+
+int main ()
+{
+    int fact =5;
+    int factorial =fact;
+  for (int i=factorial -1 ;i > 0 ; i--)
+    {
+        
+        factorial = factorial * i;
+    }
+    std:: cout <<"factorial of "<<fact<<" is : " << factorial <<::endl;
+    return 0;
+}
+
+########################
+#######################
+
+//factorial of5 is : 120
+
+38 #### While looops
+
+########################
+#######################
+
+    int main ()
+    {
+    int factorial =5 ;
+    int i =factorial - 1 ;
+    while (i>1)
+        {
+            factorial *=i;
+            i--;
+        }
+
+        std::cout<<factorial <<std::endl;
+    }
+########################
+#######################
+
+39 #### Do While Loop -use it when you want something to happen at least one .Login or username password 
+########################
+#######################
+
+    std:: string password ="hellotacos123";
+    std:: string guess;
+    do 
+    {
+        std::cout<<"Type the password : ";
+        std::cin>>guess;
+    } while (guess !=password);
+
+        std::cout<<"Password matched !"<<std::endl;
+        ########################
+#######################
+
+40 ####   Return and break keywords 
+break-will break a loop 
+continue -preskacha iteration-a ,toest ako iskame neshto da preskochim bukva i tn v string primerno ,shte go preskochim  
+
+41 ### Condition operator '?' + 'true statement : not true statement"
+########################
+#######################
+int answer =11;
+std::cout<< "Guess the number : ";
+int guess;
+std::cin>>guess;
+//or int points = guess == answer ? 10 : 0 ;
+
+guess == answer ? std::cout <<"You got it right\n" : std::cout <<"Try agian";
+
+########################
+#######################
+
+42 ########### INTRO TO OUR APP 
+
+for menu -- do -while loop 
+operate the menu switch statement 
+while loop -for the guessing 
+if -if the answer is correct break out 
+for -keep track of guesses and stores them in an array and prints them
+
+
+return 0  - is the option 'quit' even if we have code after that 
+
+43-44 #### Developing our app
+Menu - DO - SWTICH S CASE-OVE [i FUNCTIQTA] ZA OPCIITE  -WHILE 
+FUNCIQTA-generira random chislo koeto trqbva da se poznae 
+/while 
+    if 
+    else if 
+    else
+/    
+
+45 ### -INTRO TO ARRAYS AND VECTORS 
+if we want to keep track of user input ,we can use arrays and VECTORS
+
+Array and   Vectors 
+templatized aray
+
+#Aray 
+int guess [100] - '100'size 
+--index //vseki element ima indeks ,array pochva ot index 0 /ako iskame da minem prez 'array size - 1'
+array is statically sized -kato se kompilira e veche setnat
+
+--templatized array =normal array wrapped in an object 
+
+
+##Vectors or Lists in other programing languages 
+--dynamic array
+--dynamically sized 
+--vectors are basically an array but you can add more elements as you go 
+--know its size 
+
+
+46 ######  Arrays and working with them 
+########################
+#######################
+
+
+	int guesses[] ={0,1,2,3,4};
+
+    int num_elements=5;
+	int size =sizeof(guesses)/sizeof(guesses[0]);
+	std::cout << size<<std::endl;
+
+	for(int i=0;i<num_elements;i++)
+	{
+
+		std::cout<< guesses[i]<<"\t";
+	} 
+	return 0;
+
+########################
+#######################
+
+/*
+    int num_elements=5;
+	int size =sizeof(guesses)/sizeof(guesses[0]);
+	std::cout << size<<std::endl;
+
+	for(int i=0;i<num_elements;i++)
+	{
+
+		std::cout<< guesses[i]<<"\t";
+	} */
+
+
+	/*int num_elements= 5;
+	guesses[0] =10 ;
+	std::cin>>guesses[0];
+	std::cout<<guesses[0]<<std::endl;
+	return 0;
+	*/
+########################
+#######################
+
+ 47 ####    Passing arrays to functions 
+ when you pass an array to a function it losses its sense for size 
+
+
+void print_array(int array[])
+    {
+        std::cout<<sizeof(array)<<endl;
+// --v tozi sluchai array guesses go predavame na funkciqta print_array i sled tova sizeof stava ne znachitelen zashtoto gubim kolko tochno e array-a
+//Ako array-a e vuv funciqta shteshe da znaem kolko golqm kato razmer (memory) e array-a
+    }
+
+
+int main ()
+{
+
+
+   
+	int guesses[] ={0,1,2,3,4};
+    std::cout<<sizeof(guesses)<<std::endl;
+    print_array(guesses);
+}
+
+########################
+#######################
+#include <iostream>
+using std::cout;
+using std::endl;
+using std::cin;//console in
+void print_array(int array[], int size)
+    {
+        for(int i =0; i < size; i++)
+        {
+
+            std::cout << array[i] <<"\t";
+        }
+    
+    std::cout << "\n";
+    }
+
+
+int main ()
+{
+
+
+   
+	int guesses[] ={0,1,2,3,4};
+    int size= sizeof(guesses)/sizeof(guesses[0]); //tuk moje i sizeof(int) nakraq
+    print_array(guesses,size);
+}
+
+########################
+#######################
+
+48 ###### Printing an array from user input 
+ loop to [userinput] input into an array 
+
+########################
+#######################
+#include <iostream>
+#include <limits>
+using std::cout;
+using std::endl;
+using std::cin;//console in
+
+void print_array(int array[], int size)
+    {
+        for(int i =0; i < size; i++)
+        {
+
+            std::cout << array[i] <<"\t";
+        }
+    
+    std::cout << std::endl;
+    }
+
+
+int main ()
+{
+
+
+    const int SIZE =10;
+	int guesses[SIZE];
+   
+   int count=0;
+    
+    for(int i=0;i<SIZE;i++)
+    {
+         if(std::cin>>guesses[i])
+         {
+             count++;
+             //input worked 
+         }   
+         else 
+         {
+             //invalid charakter
+             break;
+         }
+
+    }
+
+    
+  print_array(guesses,count);
+  std::cin.clear(); /*zashtoto cin ako e false-->   'if(std::cin>>guesses[i])' ,
+  ostava vuv visqsht state zashtoto primerno sme slojili bukva vmesto chislo ,i tazi bukva ili neshto != chislo shte budi v sledvashtite proizvejdaniq*/
+
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n'); //po hubaviq variant na 'std::cin.ignore(1000,'\n'); ' //
+
+  std::string test_leftoverstuff;
+  std::cin>>test_leftoverstuff;
+  std::cout<<test_leftoverstuff<<std::endl;
+
+  return 0;
+}
+########################
+#######################
+
+49 ###### Using Array to Keep Track of Guessing for our Mini Game Guess
+
