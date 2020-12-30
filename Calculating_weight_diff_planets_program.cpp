@@ -1,6 +1,6 @@
 #include <iostream>
 
-int main () 
+void richard () 
 {
 
 double earth_weight;
